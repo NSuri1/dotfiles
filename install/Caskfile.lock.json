@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "5cf93de54c05dbacf90da08ee1668a6517997e3b"
+        "revision": "03891afacfdf35be0fd6acac4b6dcbc4ee367939"
       },
       "homebrew/cask-drivers": {
         "revision": "47b3342d43c99ff5855382b90d2f2771da1007e0"
@@ -139,6 +139,12 @@
         "version": "latest",
         "options": {
           "full_name": "webpquicklook"
+        }
+      },
+      "agenda": {
+        "version": "9.3.2",
+        "options": {
+          "full_name": "agenda"
         }
       }
     }
