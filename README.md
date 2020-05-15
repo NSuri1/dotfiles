@@ -1,6 +1,6 @@
 # .files
 
-These are my dotfiles. Take anything you want, but at your own risk.
+These are my dotfiles. Take anything you want, but at your own risk. Forked from webpro/dotfiles
 
 It targets macOS systems, but it should work on \*nix as well (with `apt-get`).
 
@@ -25,11 +25,11 @@ On a sparkling fresh installation of macOS:
 The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS).
 Then, install this repo with `curl` available:
 
-    bash -c "`curl -fsSL https://raw.githubusercontent.com/webpro/dotfiles/master/remote-install.sh`"
+    bash -c "`curl -fsSL https://raw.githubusercontent.com/nsuri1/dotfiles/master/remote-install.sh`"
 
 This will clone (using `git`), or download (using `curl` or `wget`), this repo to `~/.dotfiles`. Alternatively, clone manually into the desired location:
 
-    git clone https://github.com/webpro/dotfiles.git ~/.dotfiles
+    git clone https://github.com/nsuri1/dotfiles.git ~/.dotfiles
 
 Use the [Makefile](./Makefile) to install everything [listed above](#package-overview), and symlink [runcom](./runcom) and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 
