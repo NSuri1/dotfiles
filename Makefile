@@ -1,4 +1,4 @@
-SHELL = /bin/bash
+SHELL = /bin/zsh
 DOTFILES_DIR := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 PATH := $(DOTFILES_DIR)/bin:$(PATH)
@@ -14,7 +14,7 @@ macos: sudo core-macos packages link
 
 linux: core-linux link
 
-core-macos: brew bash git npm ruby
+core-macos: brew zsh git npm ruby
 
 core-linux:
 	apt-get update
@@ -47,10 +47,9 @@ unlink: stow-$(OS)
 brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
-bash: BASH=/usr/local/bin/bash
-bash: SHELLS=/private/etc/shells
-bash: brew
-	if ! grep -q $(BASH) $(SHELLS); then brew install bash bash-completion@2 pcre && sudo append $(BASH) $(SHELLS) && chsh -s $(BASH); fi
+zsh: OH-MY-ZSH=$(HOME)/.oh-my-zsh
+zsh: 
+	if ! [ -d $(NVM_DIR)/.git ]; then curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh ; fi
 
 git: brew
 	brew install git git-extras
